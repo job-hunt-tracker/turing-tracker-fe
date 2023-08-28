@@ -1,25 +1,46 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import fetchData from './apiCalls';
 
-function App() {
+const App = () => {
+  // const [users, setAllUsers] = useState([])
+  const [loggedInUser, setLoggedInUser] = useState("")
+  const [userApps, setUserApps] = useState([])
+  const [error, setError] = useState("")
+
+  useEffect(() => {
+    fetchData(`users`)
+      .then(data => {
+        const userEmail = data.data.attributes.email
+        setLoggedInUser(userEmail)
+        setUserApps(data.data.attributes.apps)
+        console.log("apps", userApps)
+      })
+      .catch(error => {
+        // setLoading(false)
+        setError(error)
+      })
+  }, [loggedInUser])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      {/* {error ? <h1>{error}</h1> : */}
+      {/* <main> */}
+      <h1>Welcome Users! {loggedInUser}</h1>
+      <h2>Here are your applications: </h2>
+      {userApps.map((application: any) => {
+        const companys = application.data.attributes.company
+        const statuses = application.data.attributes.status
+        const positions = application.data.attributes.position
+        console.log("companys", companys)
+        // return < li > {companys} , {statuses} , {positions} </li>
+      })
+      }
+      {/* </main> */}
+      {/* } */}
+
+    </div >
   );
 }
 
