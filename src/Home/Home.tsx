@@ -1,6 +1,10 @@
 import React from "react"
 
-const Home = () => {
+type HomeProps = {
+  userInfo: []
+}
+
+const Home = (userInfo: HomeProps) => {
 
 }
 

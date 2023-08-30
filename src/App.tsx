@@ -25,21 +25,22 @@ const App = () => {
 
   return (
     <div className="App">
-      {/* {error ? <h1>{error}</h1> : */}
-      {/* <main> */}
-      <h1>Welcome Users! {loggedInUser}</h1>
-      <h2>Here are your applications: </h2>
-      {userApps.map((application: any) => {
-        const companys = application.data.attributes.company
-        const statuses = application.data.attributes.status
-        const positions = application.data.attributes.position
-        console.log("companys", companys)
-        // return < li > {companys} , {statuses} , {positions} </li>
-      })
-      }
-      {/* </main> */}
-      {/* } */}
-
+      <>
+        {/* {error ? <h1>{error}</h1> : */}
+        {/* <main> */}
+        <h1>Welcome Users! {loggedInUser}</h1>
+        <h2>Here are your applications: </h2>
+        {userApps.map((application: any) => {
+          const companys = application.data.attributes.company
+          const statuses = application.data.attributes.status
+          const positions = application.data.attributes.position
+          console.log("companys", companys)
+          // return < li > {companys} , {statuses} , {positions} </li>
+        })
+        }
+        {/* </main> */}
+        {/* } */}
+      </>
     </div >
   );
 }
