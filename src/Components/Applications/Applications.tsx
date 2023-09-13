@@ -1,4 +1,5 @@
 import React from "react";
+import "../Applications/Applications.css"
 
 type ApplicationsProps = any
 type AppProps = {
@@ -22,8 +23,8 @@ const Applications = (appInfo: ApplicationsProps) => {
         <li>Status</li>
         <li>Date</li>
         <li>Job Title</li>
-        {appInfo.apps.apps.map((application: AppProps) => {
-          return (<div>
+        {/* {appInfo.apps.apps.map((application: AppProps) => { */}
+        {/* return (<div>
             <h1>Company:{application.company}</h1>
             <h1>Created:{application.created}</h1>
             <h1>Location:{application.location}</h1>
@@ -32,10 +33,10 @@ const Applications = (appInfo: ApplicationsProps) => {
             <h1>Referrals:{application.referrals}</h1>
             <h1>Status:{application.status}</h1>
             <h1>Updated:{application.updated}</h1>
-          </div>)
+          </div>) */}
 
-        }
-        )}
+        {/* } */}
+        {/* )} */}
       </ul>
     </main>
   )
