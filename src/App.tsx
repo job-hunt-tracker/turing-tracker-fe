@@ -39,6 +39,14 @@ const App: FunctionComponent<userInfoProps> = () => {
         {/* {error ? <h1>{error}</h1> : */}
         {/* <main> */}
         {/* <h1>Welcome Users! {loggedInUser}</h1> */}
+        <div>
+          <p>logo location</p>
+        </div>
+        <div>
+          <button>filter</button>
+          <button>add new application</button>
+          <input type="text" placeholder='Search...'></input>
+        </div>
         <h2>Here are your applications: </h2>
         {userApps.map((application: any) => {
           // const companys = application.data.attributes.company
