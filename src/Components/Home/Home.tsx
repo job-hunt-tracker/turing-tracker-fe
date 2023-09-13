@@ -2,14 +2,25 @@ import React from "react"
 import Applications from "../Applications/Applications"
 
 type HomeProps = {
-  userInfo: any
+  userInfo: object,
+  apps: object[]
+
 }
 
 const Home = (userInfo: HomeProps) => {
   console.log("okokokok", userInfo.userInfo)
   return (
-    // <h1>Heeyyy I'm home</h1>
-    <Applications apps={userInfo.userInfo} />
+    <main>
+      <div>
+        <p>logo location</p>
+      </div>
+      <div>
+        <button>filter</button>
+        <button>add new application</button>
+        <input type="text" placeholder='Search...'></input>
+      </div>
+      <Applications apps={userInfo.apps} />
+    </main>
   )
 }
 

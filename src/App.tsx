@@ -36,14 +36,14 @@ const App: FunctionComponent<userInfoProps> = () => {
   return (
     <div className="App">
       <>
-        <div>
+        {/* <div>
           <p>logo location</p>
         </div>
         <div>
           <button>filter</button>
           <button>add new application</button>
           <input type="text" placeholder='Search...'></input>
-        </div>
+        </div> */}
         <Home userInfo={userData} />
 
       </>
