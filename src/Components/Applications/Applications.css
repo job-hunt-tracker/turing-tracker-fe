@@ -1,3 +1,28 @@
 .gridContainer {
-  font: red;
+  border: 2px solid black;
+  height: 45vh;
+  margin: 5% 2%;
+}
+
+.tableHeader {
+  /* display: table-header-group; */
+  border-bottom: 2px solid black;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  height: 100%;
+}
+
+tr {
+  height: 5vh;
+  /* border: none; */
+  border-bottom: 2px solid black;
+}
+
+td,
+th {
+  width: 0%;
+  border-right: 2px solid black;
 }

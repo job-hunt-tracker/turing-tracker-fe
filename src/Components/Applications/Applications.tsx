@@ -1,4 +1,5 @@
 import React, { FunctionComponent } from "react";
+import { FaTrashAlt } from "react-icons/fa"
 import "../Applications/Applications.css"
 
 interface AppProps {
@@ -17,7 +18,7 @@ const Applications: FunctionComponent<AppProps> = ({ appInfo }): JSX.Element => 
   return (
     <main className="gridContainer">
       <table>
-        <tr>
+        <tr className="tableHeader">
           <th>Job Title</th>
           <th>Company</th>
           <th>Location</th>
@@ -33,7 +34,7 @@ const Applications: FunctionComponent<AppProps> = ({ appInfo }): JSX.Element => 
               <td>{application.location}</td>
               <td>{application.status}</td>
               <td>{application.updated}</td>
-              <td></td>
+              <td><button><FaTrashAlt /></button></td>
             </tr>
           )
         })}
