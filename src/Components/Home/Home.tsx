@@ -1,14 +1,15 @@
-import React from "react"
+import React, { FunctionComponent } from "react"
 import Applications from "../Applications/Applications"
 
-type HomeProps = {
-  userInfo: object,
-  apps: object[]
-
+type HomePropsInfo = {
+  email: string, id: number, fname: string, lname: string, role: string, apps: object[]
+}
+interface HomeProps {
+  userInfo: HomePropsInfo
 }
 
-const Home = (userInfo: HomeProps) => {
-  console.log("okokokok", userInfo.userInfo)
+
+const Home: FunctionComponent<HomeProps> = ({ userInfo }): JSX.Element => {
   return (
     <main>
       <div>

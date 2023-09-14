@@ -5,14 +5,21 @@ import fetchData from './apiCalls';
 import Home from './Components/Home/Home';
 
 type userInfoProps = {
-  // userData: any
+  // userData: any,
+  // userApps: any
+  email: string, id: number, fname: string, lname: string, role: string, apps: object[]
 }
+// interface userProps {
+//   user: userInfoProps
+// }
 
-const App: FunctionComponent<userInfoProps> = () => {
+const App: FunctionComponent = () => {
   // const [users, setAllUsers] = useState([])
   const [loggedInUser, setLoggedInUser] = useState("")
   const [userApps, setUserApps] = useState([])
-  const [userData, setUserData] = useState<{ email: string, id: number, fname: string, lname: string, role: string, apps: object[] }>({ email: "gfd", id: 0, fname: "", lname: "", role: "", apps: [] })
+  const [userData, setUserData] = useState<userInfoProps>({ email: "", id: 0, fname: "", lname: "", role: "", apps: [] })
+  // const [userData, setUserData] = useState<{ email: string, id: number, fname: string, lname: string, role: string, apps: object[] }>({ email: "gfd", id: 0, fname: "", lname: "", role: "", apps: [] })
+
   const [error, setError] = useState("")
 
   useEffect(() => {
@@ -36,14 +43,7 @@ const App: FunctionComponent<userInfoProps> = () => {
   return (
     <div className="App">
       <>
-        {/* <div>
-          <p>logo location</p>
-        </div>
-        <div>
-          <button>filter</button>
-          <button>add new application</button>
-          <input type="text" placeholder='Search...'></input>
-        </div> */}
+
         <Home userInfo={userData} />
 
       </>
