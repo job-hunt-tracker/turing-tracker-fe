@@ -1,30 +1,70 @@
-import React from "react";
+import React, { FunctionComponent } from "react";
 import "../Applications/Applications.css"
 
-type ApplicationsProps = any
-type AppProps = {
-  company: string,
-  created: string,
-  location: string,
-  notes: string,
-  position: string,
-  referrals: string,
-  status: string,
-  updated: string
+// type ApplicationsProps = any
+// type AppPropsInfo = {
+//   company: string,
+//   created: string,
+//   location: string,
+//   notes: string,
+//   position: string,
+//   referrals: string,
+//   status: string,
+//   updated: string
+// }
+
+interface AppProps {
+  // appInfo: AppPropsInfo
+  appInfo: {
+    company: string,
+    created: string,
+    location: string,
+    notes: string,
+    position: string,
+    referrals: string,
+    status: string,
+    updated: string
+  }[]
 }
-const Applications = (appInfo: ApplicationsProps) => {
-  console.log(appInfo)
+const Applications: FunctionComponent<AppProps> = ({ appInfo }): JSX.Element => {
+  // console.log(appInfo)
   return (
     <main className="gridContainer">
-      <ul>
-        <li>Job Title</li>
+      {/* return ( */}
+      <table>
+        <tr>
+          <th>Job Title</th>
+          <th>Company</th>
+          <th>Location</th>
+          <th>Status</th>
+          <th>Date</th>
+          <th></th>
+        </tr>
+        {appInfo.map((application: any, key: number) => {
+          return (
+            <tr key={key}>
+              <td>{application.position}</td>
+              <td>{application.company}</td>
+              <td>{application.location}</td>
+              <td>{application.status}</td>
+              <td>{application.updated}</td>
+
+            </tr>
+          )
+        })}
+      </table>
+      {/* <ul>
+        <li>Job Title: {application.position}</li>
         <li>Company</li>
         <li>Location</li>
         <li>Status</li>
         <li>Date</li>
         <li>Job Title</li>
-        {/* {appInfo.apps.apps.map((application: AppProps) => { */}
-        {/* return (<div>
+
+      </ul> */}
+      {/* ) */}
+      {/* {appInfo.apps.apps.map((application: AppProps) => { */}
+      {/* return (<div>
             <h1>Company:{application.company}</h1>
             <h1>Created:{application.created}</h1>
             <h1>Location:{application.location}</h1>
@@ -35,10 +75,9 @@ const Applications = (appInfo: ApplicationsProps) => {
             <h1>Updated:{application.updated}</h1>
           </div>) */}
 
-        {/* } */}
-        {/* )} */}
-      </ul>
-    </main>
+      {/* } */}
+      {/* )} */}
+    </main >
   )
 }
 

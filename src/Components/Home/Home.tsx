@@ -2,7 +2,7 @@ import React, { FunctionComponent } from "react"
 import Applications from "../Applications/Applications"
 
 type HomePropsInfo = {
-  email: string, id: number, fname: string, lname: string, role: string, apps: object[]
+  email: string, id: number, fname: string, lname: string, role: string, apps: any
 }
 interface HomeProps {
   userInfo: HomePropsInfo
@@ -20,7 +20,7 @@ const Home: FunctionComponent<HomeProps> = ({ userInfo }): JSX.Element => {
         <button>add new application</button>
         <input type="text" placeholder='Search...'></input>
       </div>
-      <Applications apps={userInfo.apps} />
+      <Applications appInfo={userInfo.apps} />
     </main>
   )
 }
