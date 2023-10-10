@@ -1,5 +1,5 @@
 import React, { useState, useEffect, FunctionComponent } from 'react';
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import { Button } from '@mui/material';
 import './App.css';
 import fetchData from './apiCalls';
