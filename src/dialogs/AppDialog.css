@@ -1,0 +1,15 @@
+.form-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.form-col-l {
+  margin-right: 0.5rem !important;
+  flex-grow: 0.4;
+}
+
+.form-col-r {
+  margin-left: 0.5rem !important; 
+  flex-grow: 0.4;
+}
+

@@ -16,7 +16,6 @@ export const components = (palette: Palette): ThemeOptions["components"] => ({
       },
     },
   },
-
   MuiButtonGroup: {
     styleOverrides: {
       root: {
