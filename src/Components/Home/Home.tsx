@@ -1,15 +1,16 @@
-import React, { FunctionComponent } from "react"
-import Applications from "../Applications/Applications"
+import React, { FunctionComponent, useState, useEffect } from "react"
+import Applications from "./Applications/Applications"
+import AppDialog from '../../dialogs/AppDialog';
+import AppDetailsDialog from '../../dialogs/AppDetailsDialog';
+import useDialog from '../../dialogs/dialogHooks';
+import { userState } from '../../atoms';
+import { useRecoilValue } from 'recoil';
+import { Button } from "@mui/material";
 
-type HomePropsInfo = {
-  email: string, id: number, fname: string, lname: string, role: string, apps: any
-}
-interface HomeProps {
-  userInfo: HomePropsInfo
-}
+const Home: FunctionComponent = (): JSX.Element => {
+  const { type, openDialog, closeDialog } = useDialog();
+  const userInfo = useRecoilValue(userState)
 
-
-const Home: FunctionComponent<HomeProps> = ({ userInfo }): JSX.Element => {
   return (
     <main>
       <div>
@@ -21,6 +22,14 @@ const Home: FunctionComponent<HomeProps> = ({ userInfo }): JSX.Element => {
         <input type="text" placeholder='Search...'></input>
       </div>
       <Applications appInfo={userInfo.apps} />
+      <Button variant="outlined" color="primary" onClick={() => openDialog('new')}>
+        Open New App Dialog
+      </Button>
+      <Button variant="outlined" color="primary" onClick={() => openDialog('details')}>
+        Open App Details Dialog
+      </Button>
+      { type === 'new' && <AppDialog userId={userInfo.id} closeDialog={closeDialog} /> }
+      { type === 'details' && <AppDetailsDialog appId={1} closeDialog={closeDialog} /> }
     </main>
   )
 }
