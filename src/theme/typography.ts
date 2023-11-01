@@ -4,6 +4,7 @@ import { TypographyVariantsOptions } from "@mui/material/styles";
 
 export const options: TypographyVariantsOptions = {
   fontFamily: [
+    `Poppins`,
     `-apple-system`,
     `"BlinkMacSystemFont"`,
     `"Segoe UI"`,

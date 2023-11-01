@@ -1,0 +1,29 @@
+.hero-section {
+  display: flex;
+  padding: 25vh 0;
+  margin-left: none !important;
+}
+
+.hero-text {
+  margin-left: none !important;
+}
+
+.hero-header {
+  font-weight: 600 !important;
+}
+
+@media screen and (max-width: 768px) {
+
+  .hero-text {
+    width: 100% !important;
+  }
+
+  .hero-section {
+    padding: 20vh 0 !important;
+  }
+
+  .hero-sub, .hero-header, .hero-buttons {
+    padding: 15px 0;
+  }
+  
+}

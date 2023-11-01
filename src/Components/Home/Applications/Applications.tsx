@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from "react";
 import { FaTrashAlt } from "react-icons/fa"
-import "../Applications/Applications.css"
+import "./Applications.css"
 
 interface AppProps {
   appInfo: {
@@ -14,6 +14,8 @@ interface AppProps {
     updated: string
   }[]
 }
+
+
 const Applications: FunctionComponent<AppProps> = ({ appInfo }): JSX.Element => {
   return (
     <main className="gridContainer">
